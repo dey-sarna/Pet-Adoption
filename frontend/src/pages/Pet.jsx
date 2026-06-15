@@ -45,7 +45,7 @@ const Pet = () => {
           }}
         >
           {pets.map((pet) => {
-            // DB te jodi status null thake, tahole default "Available"
+            //
             const statusText = pet.status || "Available";
 
             return (

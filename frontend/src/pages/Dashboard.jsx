@@ -115,7 +115,7 @@ const Dashboard = () => {
                     gap: "18px",
                   }}
                 >
-                  {/* pet image (optional) */}
+                  
                   {app.image_url && (
                     <img
                       src={app.image_url}

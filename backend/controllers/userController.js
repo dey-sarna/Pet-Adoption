@@ -1,9 +1,8 @@
-// backend/controllers/userController.js
 const User = require("../models/User");
 
 exports.getMe = async (req, res) => {
   try {
-    const userId = req.user.id; // authMiddleware theke
+    const userId = req.user.id; 
     const [rows] = await User.findById(userId);
 
     if (rows.length === 0) {

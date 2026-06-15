@@ -1,11 +1,9 @@
-// backend/controllers/adoptionController.js
+
 const Adoption = require("../models/Adoption");
 
-// POST /api/adoptions  (user apply korbe)
 exports.applyAdoption = async (req, res) => {
   const userId = req.user.id;
 
-  // frontend theke petId or pet_id jeivabei ashuk
   const { petId, pet_id } = req.body;
   const finalPetId = petId || pet_id;
 
@@ -22,7 +20,7 @@ exports.applyAdoption = async (req, res) => {
   }
 };
 
-// GET /api/adoptions/my  (logged-in user er sob application)
+
 exports.getMyApplications = async (req, res) => {
   try {
     const [apps] = await Adoption.getByUser(req.user.id);
@@ -33,7 +31,7 @@ exports.getMyApplications = async (req, res) => {
   }
 };
 
-// GET /api/adoptions/all  (admin)
+
 exports.getAllApplications = async (req, res) => {
   try {
     const [apps] = await Adoption.getAll();
@@ -44,7 +42,6 @@ exports.getAllApplications = async (req, res) => {
   }
 };
 
-// PUT /api/adoptions/:id  (admin status change)
 exports.updateStatus = async (req, res) => {
   const { status } = req.body;
 

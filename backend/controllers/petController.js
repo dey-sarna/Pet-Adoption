@@ -1,6 +1,5 @@
 const Pet = require("../models/Pet");
 
-// GET all pets
 exports.getAllPets = async (req, res) => {
   try {
     const [pets] = await Pet.getAll();
@@ -11,12 +10,10 @@ exports.getAllPets = async (req, res) => {
   }
 };
 
-// GET single pet by ID
 exports.getPetById = async (req, res) => {
   try {
     const [result] = await Pet.getById(req.params.id);
 
-    // Pet not found
     if (result.length === 0) {
       return res.status(404).json({ message: "Pet not found" });
     }
